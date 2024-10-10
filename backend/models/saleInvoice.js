@@ -18,6 +18,7 @@ const saleInvoiceSchema = new Schema(
     },
     voucherNo: {
       type: Number,
+      unique: true,
     },
     productCode: {
       type: String,

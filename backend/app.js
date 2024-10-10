@@ -8,6 +8,7 @@ const userRoutes = require("./routes/user");
 const shopRoutes = require("./routes/shop");
 const staffRoutes = require("./routes/staff");
 const saleInvoiceRoutes = require("./routes/saleInvoice");
+const categoryRoutes = require("./routes/category");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use("/api/auth", userRoutes);
 app.use("/api/shop", shopRoutes);
 app.use("/api/staff", staffRoutes);
 app.use("/api/saleInvoice", saleInvoiceRoutes);
+app.use("/api/category", categoryRoutes);
 
 app.listen(3000, async () => {
   await connectDB();
