@@ -1,14 +1,22 @@
 const Product = require("../models/product");
+const Category = require("../models/category");
 
 exports.createProduct = async (req, res) => {
   const { productCode, categoryCode, productName, price } = req.body;
   try {
     const isProductSame = await Product.findOne({ productCode });
+    const isCategoryCodeExists = await Category.findOne({ categoryCode });
 
     if (isProductSame) {
       return res.status(400).json({
         message: "Product code already exists",
       });
+    }
+
+    if(!isCategoryCodeExists) {
+      return res.status(400).json({
+        message: "Invalid product category code",
+      })
     }
 
     const product = await Product.create({

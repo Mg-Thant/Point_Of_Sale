@@ -1,4 +1,5 @@
 const Staff = require("../models/staff");
+const Shop = require("../models/shop");
 
 exports.creatStaff = async (req, res) => {
   const {
@@ -13,11 +14,18 @@ exports.creatStaff = async (req, res) => {
   } = req.body;
   try {
     const isStaffExists = await Staff.findOne({ staffCode });
+    const isShopIdExists = await Shop.findOne({ _id: shopId });
 
     if (isStaffExists) {
       return res.status(400).json({
         message: "Staff member code already exists",
       });
+    }
+
+    if(!isShopIdExists) {
+      return res.status(400).josn({
+        message: "Invalid Shop ID",
+      })
     }
 
     await Staff.create({
