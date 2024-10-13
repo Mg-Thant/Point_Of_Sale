@@ -18,20 +18,8 @@ const saleInvoiceSchema = new Schema(
     },
     voucherNo: {
       type: Number,
-      unique: true,
-    },
-    productCode: {
-      type: String,
       required: true,
-      ref: "Product",
-    },
-    quantity: {
-      type: Number,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
+      ref: "SaleInvoiceDetails",
     },
     totalAmount: {
       type: Number,

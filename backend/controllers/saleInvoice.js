@@ -1,14 +1,15 @@
 const SaleInvoice = require("../models/saleInvoice");
-const getNextSequenceVal = require("../controllers/counter");
 const Product = require("../models/product");
 const Staff = require("../models/staff");
 const Shop = require("../models/shop");
+const SaleInvoiceDetails = require("../models/saleInvoiceDetails");
 
 exports.createSaleInvoice = async (req, res) => {
   const {
     staffCode,
     shopCode,
     productCode,
+    voucherNo,
     quantity,
     price,
     totalAmount,
@@ -25,27 +26,31 @@ exports.createSaleInvoice = async (req, res) => {
     const isProductCodeExists = await Product.findOne({ productCode });
     const isStaffCodeExists = await Staff.findOne({ staffCode });
     const isShopCodeExists = await Shop.findOne({ shopCode });
+    const isVoucherNoExists = await SaleInvoiceDetails.findOne({ voucherNo });
 
     if (!isProductCodeExists) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: "Invalid product code",
       });
     }
 
     if (!isStaffCodeExists) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: "Invalid staff code",
       });
     }
 
     if (!isShopCodeExists) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: "Invalid shop code",
       });
     }
 
-    // auto-increment voucherNo.
-    const voucherNo = await getNextSequenceVal("voucherNo");
+    if (!isVoucherNoExists) {
+      return res.status(404).json({
+        message: "Invalid voucher no",
+      });
+    }
 
     const saleInvoice = await SaleInvoice.create({
       voucherNo,

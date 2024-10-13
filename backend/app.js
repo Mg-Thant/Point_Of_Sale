@@ -9,6 +9,8 @@ const shopRoutes = require("./routes/shop");
 const staffRoutes = require("./routes/staff");
 const saleInvoiceRoutes = require("./routes/saleInvoice");
 const categoryRoutes = require("./routes/category");
+const saleInvoiceDetailsRoutes = require("./routes/saleInvoiceDetails");
+const inventoryRoutes = require("./routes/inventory");
 
 const app = express();
 
@@ -21,6 +23,8 @@ app.use("/api/shop", shopRoutes);
 app.use("/api/staff", staffRoutes);
 app.use("/api/saleInvoice", saleInvoiceRoutes);
 app.use("/api/category", categoryRoutes);
+app.use("/api/saleInvoiceDetails", saleInvoiceDetailsRoutes);
+app.use("/api/inventory", inventoryRoutes);
 
 app.listen(3000, async () => {
   await connectDB();

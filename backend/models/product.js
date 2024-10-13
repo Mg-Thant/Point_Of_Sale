@@ -10,7 +10,7 @@ const productSchema = new Schema(
     productCode: {
       type: String,
       required: true,
-      unique: true,
+      ref: "Inventory",
     },
     productName: {
       type: String,
