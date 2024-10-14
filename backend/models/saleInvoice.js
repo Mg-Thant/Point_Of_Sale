@@ -19,7 +19,7 @@ const saleInvoiceSchema = new Schema(
     voucherNo: {
       type: Number,
       required: true,
-      ref: "SaleInvoiceDetails",
+      unique: true,
     },
     totalAmount: {
       type: Number,
@@ -40,6 +40,7 @@ const saleInvoiceSchema = new Schema(
     },
     customerAccountNo: {
       type: Number,
+      required: true,
     },
     paymentAmount: {
       type: Number,
@@ -52,6 +53,10 @@ const saleInvoiceSchema = new Schema(
     change: {
       type: Number,
       required: true,
+    },
+    saleInvoiceDetails: {
+      type: Schema.Types.ObjectId,
+      ref: "SaleInvoiceDetails",
     },
   },
   {

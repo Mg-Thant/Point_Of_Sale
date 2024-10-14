@@ -5,24 +5,29 @@ const saleInvoiceDetailsSchema = new Schema(
     voucherNo: {
       type: Number,
       unique: true,
-    },
-    productCode: {
-      type: String,
-      required: true,
-      ref: "Product",
-    },
-    quantity: {
-      type: Number,
       required: true,
     },
-    price: {
-      type: Number,
-      required: true,
-    },
-    amount: {
-      type: Number,
-      required: true,
-    },
+    productSummary: [
+      {
+        productCode: {
+          type: String,
+          required: true,
+          ref: "Product",
+        },
+        quantity: {
+          type: Number,
+          required: true,
+        },
+        price: {
+          type: Number,
+          required: true,
+        },
+        amount: {
+          type: Number,
+          required: true,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
