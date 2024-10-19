@@ -4,20 +4,24 @@ const inventorySchema = new Schema({
   productCode: {
     type: String,
     required: true,
-    unique: true,
+  },
+  shop: {
+    type: Schema.Types.ObjectId,
+    ref: "Shop",
+    required: true,
   },
   currentStock: {
     type: Number,
     required: true,
   },
-  miniumStock: {
+  minimumStock: {
     type: Number,
     required: true,
     default: 5,
   },
   lastUpdated: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   stockAdded: [
     {

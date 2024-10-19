@@ -9,7 +9,7 @@ const Inventory = require("../models/inventory");
 exports.createInvoice = async (req, res) => {
   const {
     staffCode,
-    shopCode,
+    shopId,
     totalAmount,
     discount,
     tax,
@@ -21,11 +21,11 @@ exports.createInvoice = async (req, res) => {
 
   try {
     const isStaffExists = await Staff.findOne({ staffCode });
-    const isShopExists = await Shop.findOne({ shopCode });
+    const isShopExists = await Shop.findOne({ _id: shopId });
 
     if (!isStaffExists || !isShopExists) {
       return res.status(404).json({
-        message: `Invalid ${!isStaffExists ? "staff" : "shop"} code`,
+        message: `Invalid ${!isStaffExists ? "staff code" : "shopId"}`,
       });
     }
 
@@ -36,18 +36,19 @@ exports.createInvoice = async (req, res) => {
         });
         const inventory = await Inventory.findOne({
           productCode: product.productCode,
+          shop: shopId,
         });
 
-        if (!productExists || !inventory) {
-          return res.status(404).json({
-            message: `Product with code ${product.productCode} does not exist`,
-          });
+        if (!productExists) {
+          throw new Error(`Product with code ${product.productCode} does not exist`);
+        }
+
+        if (!inventory) {
+          throw new Error(`Inventory for product with code ${product.productCode} does not exist`);
         }
 
         if (inventory.currentStock < product.quantity) {
-          return res.status(404).json({
-            message: `Insufficient stock for product with code ${product.productCode}`,
-          });
+          throw new Error(`Insufficient stock for product with code ${product.productCode}`);
         }
 
         inventory.currentStock -= product.quantity;
@@ -69,7 +70,7 @@ exports.createInvoice = async (req, res) => {
 
     const saleInvoice = await SaleInvoice.create({
       staffCode,
-      shopCode,
+      shop: shopId,
       voucherNo,
       totalAmount,
       discount,
@@ -89,6 +90,7 @@ exports.createInvoice = async (req, res) => {
   } catch (err) {
     return res.status(500).json({
       message: "Internal server error",
+      err: err.message,
     });
   }
 };
@@ -120,7 +122,9 @@ exports.getSaleInvoice = async (req, res) => {
 
 exports.getAllSaleInvoice = async (req, res) => {
   try {
-    const saleInvoice = await SaleInvoice.find().sort({ createdAt: -1 });
+    const saleInvoice = await SaleInvoice.find()
+      .sort({ createdAt: -1 })
+      .populate("saleInvoiceDetails");
 
     if (!saleInvoice) {
       return res.status(404).json({

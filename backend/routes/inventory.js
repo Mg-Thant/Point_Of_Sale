@@ -11,8 +11,8 @@ router.post("/addStock", validateInventory, inventoryController.addStock);
 
 router.post("/deductStock", validateInventory, inventoryController.deductStock);
 
-router.get("/", inventoryController.getTotalStock);
+router.get("/getTotalStock", inventoryController.getTotalStock);
 
-router.get("/:productCode", inventoryController.getStock);
+router.get("/getStock/:productCode/:shopId?", inventoryController.getStock);
 
 module.exports = router;

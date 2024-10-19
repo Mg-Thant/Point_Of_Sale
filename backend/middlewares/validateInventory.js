@@ -3,6 +3,7 @@ const Joi = require("joi");
 const inventorySchema = Joi.object({
   productCode: Joi.string().required(),
   initialStock: Joi.number().optional(),
+  shopId: Joi.required(),
   addedQuantity: Joi.number().optional(),
   deductedQuantity: Joi.number().optional(),
 });

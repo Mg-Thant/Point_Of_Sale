@@ -10,6 +10,7 @@ const staffRoutes = require("./routes/staff");
 const categoryRoutes = require("./routes/category");
 const inventoryRoutes = require("./routes/inventory");
 const invoiceRoutes = require("./routes/invoice");
+const dashboardRoutes = require("./routes/dashboard");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use("/api/staff", staffRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/invoice", invoiceRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 app.listen(3000, async () => {
   await connectDB();

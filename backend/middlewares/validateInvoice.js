@@ -2,11 +2,11 @@ const Joi = require("joi");
 
 const invoiceSchema = Joi.object({
   staffCode: Joi.string().required(),
-  shopCode: Joi.string().required(),
+  shopId: Joi.string().required(),
   totalAmount: Joi.number().required(),
   discount: Joi.number().required(),
   tax: Joi.number().required(),
-  paymentType: Joi.string().valid("Cash", "MobileBanking").required(),
+  paymentType: Joi.string().valid("cash", "mobilebanking").required(),
   customerAccountNo: Joi.number().optional(),
   receivedAmount: Joi.number().required(),
   products: Joi.array()

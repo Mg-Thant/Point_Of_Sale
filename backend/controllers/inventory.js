@@ -1,19 +1,28 @@
 const Inventory = require("../models/inventory");
+const Shop = require("../models/shop");
 
 exports.createStock = async (req, res) => {
-  const { productCode, initialStock } = req.body;
+  const { productCode, initialStock, shopId } = req.body;
 
   try {
-    const isExistInventory = await Inventory.findOne({ productCode });
+    const isExistShop = await Shop.findOne({ _id: shopId });
+    const existingInventory = await Inventory.findOne({ productCode, shop: shopId });
 
-    if (isExistInventory) {
-      return res.status(400).json({
-        message: "Inventory for this product already exists",
+    if (!isExistShop) {
+      return res.status(404).json({
+        message: "Shop does not exists",
+      });
+    }
+
+    if (existingInventory) {
+      return res.status(409).json({
+        message: "This product already exists in the inventory for this shop",
       });
     }
 
     const inventory = await Inventory.create({
       productCode,
+      shop: shopId,
       currentStock: initialStock,
       stockAdded: [{ addedQuantity: initialStock }],
       stockDeducted: [],
@@ -31,10 +40,12 @@ exports.createStock = async (req, res) => {
 };
 
 exports.addStock = async (req, res) => {
-  const { productCode, addedQuantity } = req.body;
+  const { productCode, addedQuantity, shopId } = req.body;
 
   try {
-    const inventory = await Inventory.findOne({ productCode });
+    const inventory =
+      (await Inventory.findOne({ productCode })) &&
+      (await Shop.findOne({ _id: shopId }));
 
     if (!inventory) {
       return res.status(404).json({
@@ -59,10 +70,12 @@ exports.addStock = async (req, res) => {
 };
 
 exports.deductStock = async (req, res) => {
-  const { productCode, deductedQuantity } = req.body;
+  const { productCode, deductedQuantity, shopId } = req.body;
 
   try {
-    const inventory = await Inventory.findOne({ productCode });
+    const inventory =
+      (await Inventory.findOne({ productCode })) &&
+      (await Shop.findOne({ _id: shopId }));
 
     if (!inventory) {
       return res.status(404).json({
@@ -115,9 +128,18 @@ exports.getTotalStock = async (req, res) => {
 };
 
 exports.getStock = async (req, res) => {
-  const { productCode } = req.params;
+  const { productCode, shopId } = req.params;
   try {
-    const stock = await Inventory.findOne({ productCode });
+    let stock;
+    if (productCode && shopId) {
+      stock = await Inventory.findOne({ productCode, shop: shopId })
+        .select("productCode shop currentStock lastUpdated")
+        .populate("shop", "shopCode shopName address");
+    } else if (productCode) {
+      stock = await Inventory.find({ productCode })
+        .select("productCode shop currentStock lastUpdated")
+        .populate("shop", "shopCode shopName address");
+    }
 
     if (!stock) {
       return res.status(404).json({

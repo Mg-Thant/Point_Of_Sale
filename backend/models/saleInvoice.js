@@ -7,14 +7,14 @@ const saleInvoiceSchema = new Schema(
       type: String,
       ref: "Staff",
     },
-    shopCode: {
+    shop: {
       required: true,
-      type: String,
+      type: Schema.Types.ObjectId,
       ref: "Shop",
     },
     saleInvoiceDateTime: {
       type: Date,
-      default: Date.now(),
+      default: Date.now,
     },
     voucherNo: {
       type: Number,
@@ -35,7 +35,7 @@ const saleInvoiceSchema = new Schema(
     },
     paymentType: {
       type: String,
-      enum: ["Cash", "MobileBanking"],
+      enum: ["cash", "mobilebanking"],
       required: true,
     },
     customerAccountNo: {
