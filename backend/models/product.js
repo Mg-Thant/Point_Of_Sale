@@ -20,6 +20,10 @@ const productSchema = new Schema(
       type: Number,
       required: true,
     },
+    costPrice: {
+      type: Number,
+      required: true,
+    },
   },
   {
     timestamps: true,

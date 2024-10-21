@@ -26,4 +26,6 @@ router.get("/getTopEmployee", dashboardController.getTopEmployee);
 
 router.get("/getCashFlow", dashboardController.getCashFlow);
 
+router.get("/getProfitMargins", dashboardController.getProfitMargins);
+
 module.exports = router;

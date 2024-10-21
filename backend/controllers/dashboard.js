@@ -231,3 +231,55 @@ exports.getCashFlow = async (req, res) => {
     });
   }
 };
+
+exports.getProfitMargins = async (req, res) => {
+  try {
+    const profitMargins = await SaleInvoiceDetails.aggregate([
+      { $unwind: "$productSummary" },
+      {
+        $lookup: {
+          from: "products",
+          localField: "productSummary.productCode",
+          foreignField: "productCode",
+          as: "productDetails",
+        },
+      },
+      {
+        $unwind: "$productDetails",
+      },
+      {
+        $addFields: {
+          sellPrice: "$productSummary.price",
+          costPrice: "$productDetails.costPrice",
+          profitMargin: {
+            $subtract: ["$productSummary.price", "$productDetails.costPrice"],
+          },
+        },
+      },
+      {
+        $project: {
+          productCode: "$productSummary.productCode",
+          sellPrice: 1,
+          costPrice: 1,
+          profitMargin: 1,
+          quantitySold: "$productSummary.quantity",
+        },
+      },
+    ]);
+
+    if (!profitMargins.length) {
+      return res.status(404).json({ message: "No profit margins found" });
+    }
+
+    console.log(profitMargins);
+
+    return res.status(200).json({
+      message: "Profit margins generated successfully",
+      data: profitMargins,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
