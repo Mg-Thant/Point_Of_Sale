@@ -41,6 +41,7 @@ const saleInvoiceSchema = new Schema(
     customerAccountNo: {
       type: Number,
       required: true,
+      ref: "Customer",
     },
     paymentAmount: {
       type: Number,

@@ -7,18 +7,17 @@ const invoiceSchema = Joi.object({
   discount: Joi.number().required(),
   tax: Joi.number().required(),
   paymentType: Joi.string().valid("cash", "mobilebanking").required(),
-  customerAccountNo: Joi.number().optional(),
+  customerAccountNo: Joi.number().required(),
   receivedAmount: Joi.number().required(),
-  products: Joi.array()
-    .items(
-      Joi.object({
-        productCode: Joi.string().required(),
-        quantity: Joi.number().required(),
-        price: Joi.number().required(),
-        amount: Joi.number().required(),
-      })
-    )
-    .required(),
+  products: Joi.array().items(
+    Joi.object({
+      productCode: Joi.string().required(),
+      quantity: Joi.number().required(),
+      price: Joi.number().required(),
+      amount: Joi.number().required(),
+    })
+  ),
+  redeemPoints: Joi.number().required(),
 });
 
 const validateInvoice = (req, res, next) => {

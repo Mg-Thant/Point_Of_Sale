@@ -11,4 +11,10 @@ router.get("/", invoiceController.getAllSaleInvoice);
 
 router.get("/saleInvoiceId", invoiceController.getSaleInvoice);
 
+router.post(
+  "/sync-sales",
+  validateInvoice,
+  invoiceController.offlineSyncedSales
+);
+
 module.exports = router;

@@ -42,7 +42,7 @@ exports.getTopSellingProducts = async (req, res) => {
         },
       },
       {
-        $limit: 5,
+        $limit: 10,
       },
       {
         $lookup: {
@@ -251,18 +251,20 @@ exports.getProfitMargins = async (req, res) => {
         $addFields: {
           sellPrice: "$productSummary.price",
           costPrice: "$productDetails.costPrice",
+          productName: "$productDetails.productName",
           profitMargin: {
             $subtract: ["$productSummary.price", "$productDetails.costPrice"],
           },
         },
       },
       {
-        $project: {
-          productCode: "$productSummary.productCode",
-          sellPrice: 1,
-          costPrice: 1,
-          profitMargin: 1,
-          quantitySold: "$productSummary.quantity",
+        $group: {
+          _id: "$productSummary.productCode", 
+          totalQuantitySold: { $sum: "$productSummary.quantity" },
+          productName: { $first: "$productDetails.productName" }, 
+          profitMargin: { $first: "$profitMargin" }, 
+          sellPrice: { $first: "$productSummary.price" },
+          costPrice: { $first: "$productDetails.costPrice" }, 
         },
       },
     ]);
@@ -270,8 +272,6 @@ exports.getProfitMargins = async (req, res) => {
     if (!profitMargins.length) {
       return res.status(404).json({ message: "No profit margins found" });
     }
-
-    console.log(profitMargins);
 
     return res.status(200).json({
       message: "Profit margins generated successfully",

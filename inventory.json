@@ -1,0 +1,861 @@
+[
+  {
+    "productCode": "2pl59y",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 6,
+    "minimumStock": 5,
+    "batchNo": "BN001",
+    "expiryDate": "2025-03-15T00:00:00.000Z",
+    "lastUpdated": "2024-10-18T08:05:35.229+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 10,
+        "addedAt": "2024-10-01T08:05:35.229+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "3qs19c",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 12,
+    "minimumStock": 8,
+    "batchNo": "BN002",
+    "expiryDate": "2025-04-20T00:00:00.000Z",
+    "lastUpdated": "2024-10-20T10:15:30.159+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 5,
+        "addedAt": "2024-10-02T10:15:30.159+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "4tv98s",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 20,
+    "minimumStock": 15,
+    "batchNo": "BN003",
+    "expiryDate": "2025-02-10T00:00:00.000Z",
+    "lastUpdated": "2024-10-19T09:30:25.149+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 20,
+        "addedAt": "2024-10-03T09:30:25.149+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "5gu77u",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 5,
+    "minimumStock": 3,
+    "batchNo": "BN004",
+    "expiryDate": "2025-05-05T00:00:00.000Z",
+    "lastUpdated": "2024-10-21T07:45:20.109+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 5,
+        "addedAt": "2024-10-04T07:45:20.109+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "6kl89g",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 10,
+    "minimumStock": 7,
+    "batchNo": "BN005",
+    "expiryDate": "2025-01-25T00:00:00.000Z",
+    "lastUpdated": "2024-10-22T11:00:15.179+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 10,
+        "addedAt": "2024-10-05T11:00:15.179+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "7wr62e",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 9,
+    "minimumStock": 6,
+    "batchNo": "BN006",
+    "expiryDate": "2025-06-12T00:00:00.000Z",
+    "lastUpdated": "2024-10-23T13:30:10.199+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 9,
+        "addedAt": "2024-10-06T13:30:10.199+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "8cx91l",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 8,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-08-30T00:00:00.000Z",
+    "lastUpdated": "2024-10-17T16:15:05.219+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 8,
+        "addedAt": "2024-10-07T16:15:05.219+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "9dq58s",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 18,
+    "minimumStock": 10,
+    "batchNo": "BN008",
+    "expiryDate": "2025-03-18T00:00:00.000Z",
+    "lastUpdated": "2024-10-16T17:45:45.229+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 18,
+        "addedAt": "2024-10-08T17:45:45.229+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "1mw36m",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 25,
+    "minimumStock": 12,
+    "batchNo": "BN009",
+    "expiryDate": "2025-07-10T00:00:00.000Z",
+    "lastUpdated": "2024-10-15T19:00:40.239+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-09T19:00:40.239+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "7xk3xo",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 7,
+    "minimumStock": 4,
+    "batchNo": "BN010",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 7,
+        "addedAt": "2024-10-10T14:30:35.249+00:00"
+      }
+    ],
+    "stockDeducted": []
+  },
+  {
+    "productCode": "2hp45o",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 25,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 10,
+        "addedAt": "2024-10-10T08:00:00.000Z"
+      },
+      {
+        "addedQuantity": 15,
+        "addedAt": "2024-10-15T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "3qf28n",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 50,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-05T08:00:00.000Z"
+      },
+      {
+        "addedQuantity": 20,
+        "addedAt": "2024-10-20T10:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "4ld63q",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 40,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-08T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "4dy50g",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 18,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 18,
+        "addedAt": "2024-10-12T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "5bg47s",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 100,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 100,
+        "addedAt": "2024-10-06T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "6nc59u",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 60,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-07T13:00:00.000Z"
+      },
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-17T15:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "7rx81w",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 22,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 22,
+        "addedAt": "2024-10-14T14:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "8sl92y",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 80,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-11T10:00:00.000Z"
+      },
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-19T16:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "9dg37a",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 15,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 15,
+        "addedAt": "2024-10-18T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "1fd98c",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 90,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-09T12:00:00.000Z"
+      },
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-20T13:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "2hw56e",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 35,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 20,
+        "addedAt": "2024-10-01T09:00:00.000Z"
+      },
+      {
+        "addedQuantity": 15,
+        "addedAt": "2024-10-15T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "3qw12f",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 70,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-03T10:00:00.000Z"
+      },
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-17T14:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "4kl32u",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 25,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-06T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "5yr92e",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 90,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-04T15:00:00.000Z"
+      },
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-20T16:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "6fj73r",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 12,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 12,
+        "addedAt": "2024-10-10T08:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "7dh49d",
+    "shop": "67042043d0902a07c3dd4ff0",
+    "currentStock": 100,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 60,
+        "addedAt": "2024-10-11T09:00:00.000Z"
+      },
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-18T13:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "8kr23g",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 55,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-13T11:00:00.000Z"
+      },
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-21T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "9sz14m",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 40,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-09T14:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "1af28p",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 65,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 35,
+        "addedAt": "2024-10-07T10:00:00.000Z"
+      },
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-18T17:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "2bc57s",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 85,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-08T09:00:00.000Z"
+      },
+      {
+        "addedQuantity": 35,
+        "addedAt": "2024-10-19T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "3dd98u",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 25,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-05T08:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "4gm67w",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 40,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-12T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "5tp93z",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 60,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 60,
+        "addedAt": "2024-10-14T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "6we48e",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 75,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 35,
+        "addedAt": "2024-10-09T11:00:00.000Z"
+      },
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-16T13:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "7op53i",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 55,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-18T15:00:00.000Z"
+      },
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-22T16:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "8qz62l",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 95,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-07T14:00:00.000Z"
+      },
+      {
+        "addedQuantity": 45,
+        "addedAt": "2024-10-19T17:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "9vl27n",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 80,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-10T10:00:00.000Z"
+      },
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-20T11:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "1aw32q",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 35,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 35,
+        "addedAt": "2024-10-04T08:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "2fe19s",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 100,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 60,
+        "addedAt": "2024-10-06T14:00:00.000Z"
+      },
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-17T15:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "3gm28w",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 50,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-08T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "4hz49y",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 65,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-13T11:00:00.000Z"
+      },
+      {
+        "addedQuantity": 35,
+        "addedAt": "2024-10-21T13:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "1clt13",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 45,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 20,
+        "addedAt": "2024-10-05T08:00:00.000Z"
+      },
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-18T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "2clt46",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 70,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 70,
+        "addedAt": "2024-10-11T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "3clt68",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 20,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 20,
+        "addedAt": "2024-10-07T14:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "4clt92",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 85,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 50,
+        "addedAt": "2024-10-06T13:00:00.000Z"
+      },
+      {
+        "addedQuantity": 35,
+        "addedAt": "2024-10-19T16:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "5clt85",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 30,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-15T10:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "6clt60",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 55,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 25,
+        "addedAt": "2024-10-08T08:00:00.000Z"
+      },
+      {
+        "addedQuantity": 30,
+        "addedAt": "2024-10-21T15:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "7clt24",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 40,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 40,
+        "addedAt": "2024-10-09T12:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "8clt72",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 75,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 75,
+        "addedAt": "2024-10-17T10:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "9clt84",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 60,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 60,
+        "addedAt": "2024-10-05T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "productCode": "1clt57",
+    "shop": "671204b3706e9e74c4d50c97",
+    "currentStock": 45,
+    "minimumStock": 5,
+    "batchNo": "BN007",
+    "expiryDate": "2025-04-22T00:00:00.000Z",
+    "lastUpdated": "2024-10-14T14:30:35.249+00:00",
+    "stockAdded": [
+      {
+        "addedQuantity": 45,
+        "addedAt": "2024-10-18T11:00:00.000Z"
+      }
+    ]
+  }
+]

@@ -6,7 +6,10 @@ exports.createStock = async (req, res) => {
 
   try {
     const isExistShop = await Shop.findOne({ _id: shopId });
-    const existingInventory = await Inventory.findOne({ productCode, shop: shopId });
+    const existingInventory = await Inventory.findOne({
+      productCode,
+      shop: shopId,
+    });
 
     if (!isExistShop) {
       return res.status(404).json({
@@ -150,6 +153,26 @@ exports.getStock = async (req, res) => {
     return res.status(200).json({
       message: "Stock retrieved",
       data: stock,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+
+exports.getExpiredItems = async (req, res) => {
+  try {
+    const date = new Date();
+    date.setDate(date.getDate() - 10);
+
+    const expiredItems = await Inventory.find({
+      expiryDate: { $lt: date },
+    });
+
+    return res.status(200).json({
+      message: "Generate expired items",
+      data: expiredItems.length > 0 ? expiredItems : 0,
     });
   } catch (err) {
     return res.status(500).json({

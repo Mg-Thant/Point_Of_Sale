@@ -19,6 +19,14 @@ const inventorySchema = new Schema({
     required: true,
     default: 5,
   },
+  batchNo: {
+    type: String,
+    required: true,
+  },
+  expiryDate: {
+    type: Date,
+    required: true,
+  },
   lastUpdated: {
     type: Date,
     default: Date.now,

@@ -15,4 +15,6 @@ router.get("/getTotalStock", inventoryController.getTotalStock);
 
 router.get("/getStock/:productCode/:shopId?", inventoryController.getStock);
 
+router.get("/getExpiredItems", inventoryController.getExpiredItems);
+
 module.exports = router;

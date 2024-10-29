@@ -1,0 +1,198 @@
+[
+  {
+    "voucherNo": 1,
+    "productSummary": [
+      {
+        "productCode": "2pl59y",
+        "quantity": 5,
+        "price": 1500,
+        "amount": 7500
+      }
+    ],
+    "createdAt": "2023-05-14T10:15:30.000Z",
+    "updatedAt": "2023-05-14T10:15:30.000Z"
+  },
+  {
+    "voucherNo": 2,
+    "productSummary": [
+      {
+        "productCode": "3qs19c",
+        "quantity": 4,
+        "price": 7000,
+        "amount": 32000
+      }
+    ],
+    "createdAt": "2023-06-20T14:50:10.000Z",
+    "updatedAt": "2023-06-20T14:50:10.000Z"
+  },
+  {
+    "voucherNo": 3,
+    "productSummary": [
+      {
+        "productCode": "4tv98s",
+        "quantity": 4,
+        "price": 2000,
+        "amount": 8000
+      },
+      {
+        "productCode": "3qs19c",
+        "quantity": 4,
+        "price": 7000,
+        "amount": 32000
+      }
+    ],
+    "createdAt": "2023-07-08T11:05:45.000Z",
+    "updatedAt": "2023-07-08T11:05:45.000Z"
+  },
+  {
+    "voucherNo": 4,
+    "productSummary": [
+      {
+        "productCode": "5gu77u",
+        "quantity": 6,
+        "price": 15000,
+        "amount": 90000
+      },
+      {
+        "productCode": "6kl89g",
+        "quantity": 50,
+        "price": 55000,
+        "amount": 2750000
+      }
+    ],
+    "createdAt": "2023-08-15T09:30:25.000Z",
+    "updatedAt": "2023-08-15T09:30:25.000Z"
+  },
+  {
+    "voucherNo": 5,
+    "productSummary": [
+      {
+        "productCode": "7wr62e",
+        "quantity": 2,
+        "price": 35000,
+        "amount": 70000
+      },
+      {
+        "productCode": "8cx91l",
+        "quantity": 10,
+        "price": 25000,
+        "amount": 250000
+      }
+    ],
+    "createdAt": "2023-09-18T15:40:50.000Z",
+    "updatedAt": "2023-09-18T15:40:50.000Z"
+  },
+  {
+    "voucherNo": 6,
+    "productSummary": [
+      {
+        "productCode": "9dq58s",
+        "quantity": 10,
+        "price": 8000,
+        "amount": 80000
+      },
+      {
+        "productCode": "1mw36m",
+        "quantity": 10,
+        "price": 3000,
+        "amount": 30000
+      }
+    ],
+    "createdAt": "2023-10-20T13:25:20.000Z",
+    "updatedAt": "2023-10-20T13:25:20.000Z"
+  },
+  {
+    "voucherNo": 7,
+    "productSummary": [
+      {
+        "productCode": "7xk3xo",
+        "quantity": 2,
+        "price": 9000,
+        "amount": 18000
+      },
+      {
+        "productCode": "2hp45o",
+        "quantity": 1,
+        "price": 7000,
+        "amount": 7000
+      },
+      {
+        "productCode": "3qf28n",
+        "quantity": 1,
+        "price": 75000,
+        "amount": 75000
+      }
+    ],
+    "createdAt": "2023-11-22T16:55:30.000Z",
+    "updatedAt": "2023-11-22T16:55:30.000Z"
+  },
+  {
+    "voucherNo": 8,
+    "productSummary": [
+      {
+        "productCode": "4ld63q",
+        "quantity": 10,
+        "price": 68000,
+        "amount": 680000
+      },
+      {
+        "productCode": "5bg47s",
+        "quantity": 3,
+        "price": 10000,
+        "amount": 30000
+      }
+    ],
+    "createdAt": "2023-12-05T08:20:35.000Z",
+    "updatedAt": "2023-12-05T08:20:35.000Z"
+  },
+  {
+    "voucherNo": 9,
+    "productSummary": [
+      {
+        "productCode": "6nc59u",
+        "quantity": 2,
+        "price": 45000,
+        "amount": 90000
+      },
+      {
+        "productCode": "7rx81w",
+        "quantity": 3,
+        "price": 12000,
+        "amount": 36000
+      },
+      {
+        "productCode": "8sl92y",
+        "quantity": 20,
+        "price": 2500,
+        "amount": 50000
+      },
+      {
+        "productCode": "9dg37a",
+        "quantity": 2,
+        "price": 120000,
+        "amount": 240000
+      },
+      {
+        "productCode": "1fd98c",
+        "quantity": 2,
+        "price": 12000,
+        "amount": 24000
+      }
+    ],
+    "createdAt": "2023-12-22T17:05:20.000Z",
+    "updatedAt": "2023-12-22T17:05:20.000Z"
+  },
+  {
+    "voucherNo": 10,
+    "productSummary": [
+      {
+        "productCode": "2hw563",
+        "quantity": 10,
+        "price": 170000,
+        "amount": 1700000
+      }
+    ],
+    "createdAt": "2023-12-29T10:45:10.000Z",
+    "updatedAt": "2023-12-29T10:45:10.000Z"
+  }
+]
