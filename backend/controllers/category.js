@@ -38,7 +38,7 @@ exports.getCategories = async (req, res) => {
     }
 
     return res.status(200).json({
-      message: "Product found",
+      message: "Category found",
       data: categories,
     });
   } catch (error) {

@@ -1,3 +1,5 @@
+const { Types } = require("mongoose");
+
 const Inventory = require("../models/inventory");
 const Shop = require("../models/shop");
 
@@ -18,7 +20,7 @@ exports.createStock = async (req, res) => {
     }
 
     if (existingInventory) {
-      return res.status(409).json({
+      return res.status(404).json({
         message: "This product already exists in the inventory for this shop",
       });
     }
@@ -46,9 +48,8 @@ exports.addStock = async (req, res) => {
   const { productCode, addedQuantity, shopId } = req.body;
 
   try {
-    const inventory =
-      (await Inventory.findOne({ productCode })) &&
-      (await Shop.findOne({ _id: shopId }));
+    const ObjShopId = new Types.ObjectId(shopId);
+    const inventory = await Inventory.findOne({ productCode, shop: ObjShopId });
 
     if (!inventory) {
       return res.status(404).json({
@@ -76,9 +77,9 @@ exports.deductStock = async (req, res) => {
   const { productCode, deductedQuantity, shopId } = req.body;
 
   try {
-    const inventory =
-      (await Inventory.findOne({ productCode })) &&
-      (await Shop.findOne({ _id: shopId }));
+    const ObjShopId = new Types.ObjectId(shopId);
+    const inventory = await Inventory.findOne({ productCode, shopId: ObjShopId });
+
 
     if (!inventory) {
       return res.status(404).json({

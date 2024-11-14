@@ -63,7 +63,7 @@ exports.createInvoice = async (req, res) => {
       });
     }
 
-    if (redeemPoints > 0) {
+    if (redeemPoints === 0) {
       if (!isCustomerExists) {
         await Customer.create({
           customerAccountNo,
@@ -89,21 +89,21 @@ exports.createInvoice = async (req, res) => {
         });
 
         if (!productExists) {
-          throw new Error(
-            `Product with code ${product.productCode} does not exist`
-          );
+          return res.status(404).json({
+            message: `Product with code ${product.productCode} does not exist`,
+          });
         }
 
         if (!inventory) {
-          throw new Error(
-            `Inventory for product with code ${product.productCode} does not exist in shop ${shopId}`
-          );
+          return res.status(404).json({
+            message: `Inventory for product with code ${product.productCode} does not exist in shop ${shopId}`,
+          });
         }
 
         if (inventory.currentStock < product.quantity) {
-          throw new Error(
-            `Insufficient stock for product with code ${product.productCode}`
-          );
+          return res.status(404).json({
+            message: `Insufficient stock for product with code ${product.productCode}`,
+          });
         }
 
         inventory.currentStock -= product.quantity;
@@ -160,7 +160,6 @@ exports.createInvoice = async (req, res) => {
   } catch (err) {
     return res.status(500).json({
       message: "Internal server error",
-      err: err.message,
     });
   }
 };
@@ -246,22 +245,19 @@ exports.offlineSyncedSales = async (req, res) => {
         });
       }
 
-      // customer creation or update
-      if (!isCustomerExists) {
-        await Customer.create(
-          {
-            customerAccountNo: sale.customerAccountNo,
-            loyaltyPoints,
-          },
-          { session }
-        );
-      } else {
-        await Customer.updateOne(
-          { customerAccountNo: sale.customerAccountNo },
-          { $inc: { loyaltyPoints } },
-          { new: true },
-          { session }
-        );
+      if (sale.redeemPoints === 0) {
+        if (!isCustomerExists) {
+          await Customer.create(
+            { customerAccountNo: sale.customerAccountNo, loyaltyPoints },
+            { session }
+          );
+        } else {
+          await Customer.updateOne(
+            { customerAccountNo: sale.customerAccountNo },
+            { $inc: { loyaltyPoints } },
+            { session }
+          );
+        }
       }
 
       // generate voucher no
@@ -281,21 +277,36 @@ exports.offlineSyncedSales = async (req, res) => {
         { session }
       );
 
+      let disAmount = sale.discount;
+      let finalAmount = sale.totalAmount;
+      if (redeemPoints > 0) {
+        const discountRes = await exports.applyLoyaltyPoint({
+          body: {
+            customerAccountNo: sale.customerAccountNo,
+            redeemPoints: sale.redeemPoints,
+          },
+        });
+        if (discountRes && discountRes.discountAmount) {
+          disAmount += discountRes.discountAmount;
+          finalAmount -= discountRes.discountAmount;
+        }
+      }
+
       // Sale invoice create
       const saleInvoice = await SaleInvoice.create(
         {
           staffCode: sale.staffCode,
           shop: sale.shopId,
           voucherNo,
-          totalAmount: sale.totalAmount,
-          discount: sale.discount,
+          totalAmount: finalAmount,
+          discount: disAmount,
           tax: sale.tax,
           paymentType: sale.paymentType,
           customerAccountNo: sale.customerAccountNo,
-          paymentAmount: totalAmount - discount + tax,
+          paymentAmount: finalAmount + sale.tax,
           receivedAmount: sale.receivedAmount,
           change:
-            receivedAmount - (sale.totalAmount - sale.discount + sale.tax),
+            receivedAmount - (finalAmount + sale.tax),
           saleInvoiceDetails: saleInvoiceDetails._id,
         },
         { session }

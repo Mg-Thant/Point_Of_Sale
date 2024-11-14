@@ -23,7 +23,7 @@ const invoiceSchema = Joi.object({
 const validateInvoice = (req, res, next) => {
   const { error } = invoiceSchema.validate(req.body);
   if (error) {
-    return res.status(400).json({ message: error.details[0].message });
+    return res.status(422).json({ message: error.details[0].message });
   }
   next();
 };

@@ -29,7 +29,7 @@ const staffSchema = new Schema({
   },
   position: {
     type: String,
-    enum: ["cashier", "admin"],
+    enum: ["cashier", "manager", "admin"],
     required: true,
   },
   shopId: {

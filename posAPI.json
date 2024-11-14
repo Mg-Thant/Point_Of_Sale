@@ -1,0 +1,446 @@
+{
+  "paths": {
+    "/api/inventory/getStock/{productCode}/?{shopId}": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "Get stock by product code and shop ID",
+        "operationId": "getStockBySpecific",
+        "parameters": [
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          },
+          {
+            "name": "shopId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "security": [{ "bearerAuth": [] }],
+        "response": {
+          "200": { "message": "Stock retrieved" },
+          "500": { "message": "Internal server error" },
+          "404": { "message": "This product has no stock" }
+        }
+      }
+    },
+    "/api/inventor/getExpiredItems": {
+      "get": {
+        "tags": ["Inventory"],
+        "summary": "Get Expired Items",
+        "operationId": "getExpiredItems",
+        "security": [{ "bearerAuth": [] }],
+        "response": {
+          "200": { "message": "Generate expired items" },
+          "500": { "message": "Internal server error" }
+        }
+      }
+    },
+    "/api/staff": {
+      "post": {
+        "tags": ["Staff"],
+        "summary": "Create new staff",
+        "operationId": "createStaff",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "staffCode": { "type": "string" },
+                  "staffName": { "type": "string" },
+                  "dateOfBirth": { "type": "date" },
+                  "mobileNumber": { "type": "number" },
+                  "address": { "type": "string" },
+                  "gender": { "type": "string" },
+                  "position": { "type": "string" },
+                  "shopId": { "type": "string" }
+                },
+                "required": [
+                  "staffCode",
+                  "staffName",
+                  "dateOfBirth",
+                  "mobileNumber",
+                  "address",
+                  "gender",
+                  "position",
+                  "shopId"
+                ]
+              }
+            }
+          }
+        },
+        "response": {
+          "201": { "message": "Staff member created successfully" },
+          "500": { "message": "Internal server error" },
+          "400": {
+            "message": "Staff member code already exists (or) Invalid Shop ID"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Staff"],
+        "summary": "Get all staff",
+        "operationId": "getAllStaff",
+        "security": [{ "bearerAuth": [] }],
+        "response": {
+          "200": "Staff member found",
+          "500": "Internal server error",
+          "404": "Staff member not found"
+        }
+      }
+    },
+    "/api/staff/{staffId}": {
+      "get": {
+        "tags": ["Staff"],
+        "summary": "Get staff by staff ID",
+        "operationId": "getStaffByID",
+        "parameters": [
+          {
+            "name": "staffId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "security": [{ "bearerAuth": [] }],
+        "response": {
+          "200": { "message": "Staff member found" },
+          "500": { "message": "Internal server error" },
+          "404": { "message": "Staff member not found" }
+        }
+      }
+    },
+    "/api/staff/update-staff/{staffId}": {
+      "patch": {
+        "tags": ["Staff"],
+        "summary": "Update staff by ID",
+        "operationId": "updateStaffById",
+        "parameters": [
+          {
+            "name": "staffId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "staffCode": { "type": "string" },
+                  "staffName": { "type": "string" },
+                  "dateOfBirth": { "type": "date" },
+                  "mobileNumber": { "type": "number" },
+                  "address": { "type": "string" },
+                  "gender": { "type": "string" },
+                  "position": { "type": "string" },
+                  "shopId": { "type": "string" }
+                },
+                "required": [
+                  "staffCode",
+                  "staffName",
+                  "dateOfBirth",
+                  "mobileNumber",
+                  "address",
+                  "gender",
+                  "position",
+                  "shopId"
+                ]
+              }
+            }
+          }
+        },
+        "response": {
+          "200": { "message": "Staff member updated successfully" },
+          "500": { "message": "Internal server error" },
+          "404": { "message": "This staff member id does not exists" }
+        }
+      }
+    },
+    "/api/staff/delete-staff/{staffId}": {
+      "delete": {
+        "tags": ["Staff"],
+        "summary": "Delete staff by staff ID",
+        "operationId": "deleteStaffById",
+        "parameters": [
+          {
+            "name": "staffId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "security": [{ "bearerAuth": [] }],
+        "response": {
+          "202": { "message": "Staff member deleted successfully" },
+          "500": { "message": "Internal server error" },
+          "404": { "message": "This staff member id does not exists" }
+        }
+      }
+    },
+    "/api/invoice": {
+      "post": {
+        "tags": ["Invoice"],
+        "summary": "Create new Invoice",
+        "operationId": "createInvoice",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "staffCode": "string",
+                  "shopId": "string",
+                  "totalAmount": "number",
+                  "discount": "number",
+                  "tax": "number",
+                  "paymentType": "string",
+                  "customerAccountNo": "string",
+                  "receivedAmount": "number",
+                  "products": {
+                    "type": "array",
+                    "products": {
+                      "type": "object",
+                      "properties": {
+                        "productCode": "string",
+                        "quantity": "number",
+                        "price": "number",
+                        "amount": "number"
+                      },
+                      "required": ["productCode", "quantity", "price", "amount"]
+                    }
+                  },
+                  "redeemPoints": "number"
+                }
+              }
+            }
+          }
+        },
+        "response": {
+          "201": {"message": "Sale invoice created successfully"},
+          "500": {"message": "Internal server error"},
+          "404": {"message": "Not found message"}
+        }
+      },
+      "get": {
+        "tags": ["Invoice"],
+        "summary": "Get all sale invoice",
+        "operationId": "getAllSaleInvoice",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Sale invoice found"},
+          "500": {"message": "Internal server error"},
+          "404": {"message": "Sale invoice not found"}
+        }
+      }
+    },
+    "api/invoice/{saleInvoiceId}": {
+      "get": {
+        "tags": ["Invoice"],
+        "summary": "Get sale invoice by ID",
+        "operationId": "getSaleInvoice",
+        "parameters": [
+          {
+            "name": "saleInvoiceId",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer", "format": "int64"}
+          }
+        ],
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Sale invoice found"},
+          "500": {"message": "Internal server error"},
+          "404": {"message": "Sale invoice not found with this ID"}
+        }
+      }
+    },
+    "/api/invoice/sync-sales": {
+      "post": {
+        "tags": ["Invoice"],
+        "summary": "Offline sync sales",
+        "operationId": "offlineSync",
+        "security": [{"bearerAuth": []}],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sales": {
+                    "type": "array",
+                    "sales": {
+                      "type": "object",
+                      "properties": {
+                        "productCode": "string",
+                        "quantity": "number",
+                        "price": "number",
+                        "amount": "number",
+                        "staffCode": "string",
+                        "shop": "string",
+                        "totalAmount": "number",
+                        "discount": "number",
+                        "tax": "number",
+                        "paymentType": {
+                          "type": "string",
+                          "example": "cash mobilebanking"
+                        },
+                        "customerAccountNo": "string",
+                        "paymentAmount": "number",
+                        "receivedAmount": "number"
+                      },
+                      "required": ["productCode", "quantity", "price", "amount", "staffCode", "shop", "totalAmount", "discount", "tax", "paymentType", "customerAccountNo", "paymentAmount", "receivedAmount"]
+                    }
+                  }
+                },
+                "required": ["sales"]
+              }
+            }
+          }
+        },
+        "response": {
+          "200": {"message": "Sale synced successfully"},
+          "500": {"message": "Internal server error"},
+          "404": {"message": "Not found message"}
+        }
+      }
+    },
+    "/api/dashboard/totalSales": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get total sales",
+        "operationId": "getTotalSales",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"messgae": "Generate total sales"},
+          "500": {"message": "Internal server error"}
+        }
+      }
+    },
+    "/api/dashboard/topSellingProducts": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get top selling products",
+        "operationId": "getTopSellingProducts",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate top selling products"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/salesByPaymentType/{type}": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get sales by payment type",
+        "operationId": "getSalesByPaymentType",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer", "format": "int64"}
+          }
+        ],
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate sales by payment type"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/lowStockProducts": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get low stock products",
+        "operationId": "getLowStockProducts",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate low stock products"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/salesByEmployee/{staffCode}": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get sales by employee",
+        "operationId": "getSalesByEmployee",
+        "parameters": [
+          {
+            "name": "staffCode",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "integer", "format": "int64"}
+          }
+        ],
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate sales by employee"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/getStockCustomer": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get top customer",
+        "operationId": "getTopCustomer",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate top customer"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/getTopEmployee": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get top employee",
+        "operationId": "getTopEmployee",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate top employee"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/getCashFlow": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get cash flow",
+        "operationId": "getCashFlow",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate cash flow"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    },
+    "/api/dashboard/getProfitMargins": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get profit margin",
+        "operationId": "getProfitMargin",
+        "security": [{"bearerAuth": []}],
+        "response": {
+          "200": {"message": "Generate profit margin"},
+          "500": {"message": "Internal sever error"}
+        }
+      }
+    }
+  }
+}

@@ -11,20 +11,24 @@ const categoryRoutes = require("./routes/category");
 const inventoryRoutes = require("./routes/inventory");
 const invoiceRoutes = require("./routes/invoice");
 const dashboardRoutes = require("./routes/dashboard");
+const isAdmin = require("./middlewares/isAdmin");
+const isManager = require("./middlewares/isManager");
+const isLogin = require("./middlewares/checkToken");
+const isCashier = require("./middlewares/isCashier");
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/api/products", productRoutes);
+app.use("/api/products", isLogin, productRoutes);
 app.use("/api/auth", userRoutes);
-app.use("/api/shop", shopRoutes);
-app.use("/api/staff", staffRoutes);
-app.use("/api/category", categoryRoutes);
-app.use("/api/inventory", inventoryRoutes);
-app.use("/api/invoice", invoiceRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/shop", isLogin, shopRoutes);
+app.use("/api/staff", isLogin, staffRoutes);
+app.use("/api/category", isLogin, categoryRoutes);
+app.use("/api/inventory", isLogin, inventoryRoutes);
+app.use("/api/invoice", isLogin, invoiceRoutes);
+app.use("/api/dashboard", isLogin, dashboardRoutes);
 
 app.listen(3000, async () => {
   await connectDB();

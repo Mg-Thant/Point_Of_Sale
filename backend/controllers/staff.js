@@ -61,7 +61,7 @@ exports.getAllStaff = async (req, res) => {
 
     return res.status(200).json({
       message: "Staff member found",
-      staff,
+      data: staff,
     });
   } catch (err) {
     return res.status(500).json({
@@ -83,7 +83,7 @@ exports.getStaff = async (req, res) => {
 
     return res.status(200).json({
       message: "Staff member found",
-      staff,
+      data: staff,
     });
   } catch (err) {
     return res.status(500).json({
@@ -111,7 +111,7 @@ exports.updateStaff = async (req, res) => {
 
     return res.status(200).json({
       message: "Staff member updated successfully",
-      staff,
+      data: staff,
     });
   } catch (err) {
     return res.status(500).json({

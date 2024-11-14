@@ -20,7 +20,7 @@ exports.createShop = async (req, res) => {
 
     return res.status(201).json({
       message: "Shop has created",
-      shop,
+      data: shop,
     });
   } catch (err) {
     return res.status(500).json({
@@ -41,7 +41,7 @@ exports.getShops = async (req, res) => {
 
     return res.status(200).json({
       message: "Shops found",
-      shops,
+      data: shops,
     });
   } catch (err) {
     return res.status(500).json({
@@ -63,7 +63,7 @@ exports.getShop = async (req, res) => {
 
     return res.status(200).json({
       message: "Shop found",
-      shop,
+      data: shop,
     });
   } catch (err) {
     return res.status(500).json({
@@ -91,7 +91,7 @@ exports.updateShop = async (req, res) => {
 
     return res.status(200).json({
       message: "Shop updated successfully",
-      shop,
+      data: shop,
     });
   } catch (err) {
     return res.status(500).json({
