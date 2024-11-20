@@ -11,15 +11,12 @@ const categoryRoutes = require("./routes/category");
 const inventoryRoutes = require("./routes/inventory");
 const invoiceRoutes = require("./routes/invoice");
 const dashboardRoutes = require("./routes/dashboard");
-const isAdmin = require("./middlewares/isAdmin");
-const isManager = require("./middlewares/isManager");
 const isLogin = require("./middlewares/checkToken");
-const isCashier = require("./middlewares/isCashier");
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use("/api/products", isLogin, productRoutes);
 app.use("/api/auth", userRoutes);

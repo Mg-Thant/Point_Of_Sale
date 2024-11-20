@@ -18,9 +18,7 @@ const checkToken = (req, res, next) => {
         message: "Token is missing",
       });
     }
-    const testToken ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NzA0MWY1MmQxOThjZmFjNjc0OWQ3OWUiLCJpYXQiOjE3MzA0ODEzMTR9.lXrmHBM3l_wlGUftKGjqTObuQUpmfsegbV7-sBs6fA0"
-    const isMatched = jwt.verify(testToken, process.env.JWT_KEY);
-    console.log(isMatched);
+    const isMatched = jwt.verify(token, process.env.JWT_KEY);
     req.userId = isMatched.userID;
     next();
   } catch (err) {
